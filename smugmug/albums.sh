@@ -12,16 +12,16 @@ test -f ~/.smugup && source ~/.smugup
 UA="smugget/1.0 (smugmug@dotd.com)"
 APIKEY="rjBy6Da5lMEbguUkqwpFEdzmOALQrsIE"
 
-while getopts "a:p:u:" flag; do
+while getopts "p:e:" flag; do
     case $flag in
-	u)
+	e)
 	    EMAIL=$OPTARG
 	    shift;shift;;
 	p)
 	    PASSWORD=$OPTARG
 	    shift;shift;;
 	*)
-	    echo "Usage: $0 [-u email] [-p password]"
+	    echo "Usage: $0 [-e email] [-p password]"
 	    exit 1
     esac
 done
