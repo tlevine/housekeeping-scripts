@@ -23,7 +23,7 @@ while getopts "n:p:u:" flag; do
 	    PASSWORD=$OPTARG
 	    ;;
 	*)
-	    echo "Usage: $0 [-u email] [-p password] files..."
+	    echo "Usage: $0 [-n nickname] [-u email] [-p password] files..."
 	    exit 1
     esac
 done
