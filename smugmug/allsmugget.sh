@@ -11,24 +11,24 @@ test -f ~/.smugup && source ~/.smugup
 UA="smugget/1.1 (smugmug@dotd.com)"
 APIKEY="rjBy6Da5lMEbguUkqwpFEdzmOALQrsIE"
 
-while getopts "n:p:u:" flag; do
+while getopts "n:p:e:" flag; do
     case $flag in
 	n)
 	    NICKNAME=$OPTARG
 	    ;;
-	u)
+	e)
 	    EMAIL=$OPTARG
 	    ;;
 	p)
 	    PASSWORD=$OPTARG
 	    ;;
 	*)
-	    echo "Usage: $0 [-n nickname] [-u email] [-p password] files..."
+	    echo "Usage: $0 [-n nickname] [-e email] [-p password] files..."
 	    exit 1
     esac
 done
 
-test -z "$EMAIL" && echo "Username missing" && exit 1
+test -z "$EMAIL" && echo "Email missing" && exit 1
 test -z "$PASSWORD" && echo "Password missing" && exit 1
 test -z "$NICKNAME" && echo "NickName missing" && exit 1
 
